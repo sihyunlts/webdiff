@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>같은 파일인가요?</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <!-- Pretendard -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="title">
+      <h1>같은 파일인가요?</h1>
+      <p>파일 해시 및 크기 비교 도구</p>
+    </div>
+    <div class="drop-container">
+      <div id="drop1" class="drop-zone"><span>📂 파일 1</span><span>드래그 앤 드롭 또는 클릭</span></div>
+      <div id="drop2" class="drop-zone"><span>📂 파일 2</span><span>드래그 앤 드롭 또는 클릭</span></div>
+    </div>
+    <input type="file" id="file1" />
+    <input type="file" id="file2" />
+  
+    <button class="button" onclick="compareFiles()">비교해주세요!</button>
+    <div class="loading" id="loading"></div>
+    <div class="result" id="result"></div>
+    <div class="size" id="size-info"></div>
+    <div class="hash" id="hashes"></div>
+
+    <footer class="footer">
+      <p><a href="https://github.com/sihyunlts/webdiff" target="_blank" rel="noopener noreferrer">GitHub 레포지토리</a></p>
+    </footer>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

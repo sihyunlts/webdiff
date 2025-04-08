@@ -1,0 +1,214 @@
+:root {
+    --bg-color: #15181d;
+    --text-color: #f1f5f9;
+    --subtext-color: #a2b2c9;
+    --accent-color: #3b82f6;
+    --border-color: #394453;
+    --drop-bg: #20262d;
+    --drop-active-bg: #1d2e42;
+    --loading-color: #38bdf8;
+    --card-bg: #20262d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    line-height: 1.8;
+}
+
+h1, h2, p {
+    margin: 0;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+p {
+    color: var(--subtext-color);
+    line-height: 1.5;
+}
+
+strong {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    width: 100%;
+    padding: 4rem 2rem;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+}
+
+.drop-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.drop-zone {
+    border: 2px dashed var(--border-color);
+    border-radius: 0.8rem;
+    padding: 2rem;
+    background: var(--drop-bg);
+    color: var(--subtext-color);
+    width: 100%;
+    min-height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-align: center;
+    flex-direction: column;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.drop-zone.dragover {
+    background: var(--drop-active-bg);
+    border-color: var(--accent-color);
+}
+
+.button {
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 0.8rem;
+    border: none;
+    background: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.button:hover {
+    transform: scale(0.98);
+}
+
+.loading {
+    color: var(--loading-color);
+    margin-bottom: 1rem;
+    display: none;
+}
+.loading.show {
+    display: block;
+}
+
+.result {
+    margin-bottom: 1rem;
+    display: none;
+}
+.result.show {
+    display: block;
+}
+
+.size, .hash {
+    font-family: "Space Mono", monospace;
+    font-size: 0.95rem;
+    text-align: left;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    max-width: 800px;
+    overflow-x: auto;
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.row > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.row > div > div {
+    min-width: 40%;
+    white-space: no-wrap;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.file-result {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.size h2, .hash h2 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 0.2rem;
+}
+
+hr {
+    width: 100%;
+    background-color: var(--border-color);
+    height: 1px;
+    border: none;
+}
+
+.toast {
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 999rem;
+    display: inline-block;
+    border: 1px solid var(--border-color);
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 auto 1rem auto;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+/* Footer */
+.footer {
+  font-size: 0.85rem;
+  color: var(--subtext-color);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.footer a {
+  color: var(--subtext-color);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
