@@ -71,7 +71,6 @@ async function compareFiles() {
 
     const [sha256_1, sha256_2] = await Promise.all([getHash(file1, 'SHA-256'), getHash(file2, 'SHA-256')]);
     const [sha1_1, sha1_2]     = await Promise.all([getHash(file1, 'SHA-1'), getHash(file2, 'SHA-1')]);
-    const [md5_1, md5_2]       = await Promise.all([getHash(file1, 'MD5'), getHash(file2, 'MD5')]).catch(() => [null, null]);
 
     resultEl.textContent = sha256_1 === sha256_2
     ? '✅ 네, 같은 파일이네요!'
@@ -124,9 +123,7 @@ async function compareFiles() {
             <div>파일 1: ${sha1_1}</div>
             <div>파일 2: ${sha1_2}</div>
         </div>
-    </div>
-    <hr>
-    ${md5_1 ? `<div class="row"><strong>MD5</strong><div>파일 1: ${md5_1}</div><div>파일 2: ${md5_2}</div></div>` : '<div class="center-text">⚠️ 브라우저에서 MD5를 지원하지 않는 것 같아요.</div>'}`;
+    </div>`;
 
     loadingEl.textContent = '';
     loadingEl.className = 'loading';
